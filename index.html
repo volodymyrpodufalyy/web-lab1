@@ -18,14 +18,14 @@
 <body>
 
 
-<header class="header">
+<header class="header" id="header">
     <div class="container">
         <div class="header__inner">
-                <div class="header__logo">
-                    <div class="header__logo-inner">
-                        <img src="./assets/images/intro/Logomark.svg" alt="Logomark"/>
-                        <h2 class="header__logo-subtitle">EcoCabins</>
-                    </div>
+            <div class="header__logo">
+                <div class="header__logo-inner">
+                    <img src="./assets/images/intro/Logomark.svg" alt="Logomark"/>
+                    <h2 class="header__logo-subtitle">EcoCabins</>
+                </div>
             </div>
 
             <nav class="nav" id="nav">
@@ -33,15 +33,18 @@
                 <a class="nav__link" href="#">Kopen</a>
                 <a class="nav__link" href="#">Huren</a>
                 <a class="nav__link" href="#">Nieuws</a>
-                <a class="nav__link active" href="#">Contact</a>
+                <a class="nav__link" href="#">Contact</a>
             </nav>
+            <button class="nav-toggle " id="nav_toggle" type="button">
+                <span class="nav-toggle__item">Menu</span>
+            </button>
         </div>
     </div>
 </header>
 <!--All Page-->
 <div class="page">
 <!--Intro-->
-<div class="intro">
+<div class="intro" id="intro">
     <div class="container">
         <div class="intro__inner">
             <div class="intro__inner-titles">
@@ -217,6 +220,9 @@
 </footer>
 
 </div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="assets/js/app.js"></script>
 
 </body>
 </html>

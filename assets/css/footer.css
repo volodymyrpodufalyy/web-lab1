@@ -22,3 +22,31 @@
     width: 38%;
     justify-content: flex-end;
 }
+
+@media (max-width: 990px){
+    .footer {
+        padding: 20px 2%;
+    }
+}
+
+@media (max-width: 770px){
+    .footer {
+        font-size: 9px;
+    }
+    .footer__copyright {
+        flex-direction: column;
+    }
+    .footer__credits {
+        width: 100%;
+        flex-direction: row-reverse;
+    }
+    .footer__credits:nth-child(even) {
+        top: 50px;
+        position: absolute;
+    }
+    .footer__details {
+        width: 100%;
+        margin-top: 2em;
+        justify-content: space-between;
+    }
+}
