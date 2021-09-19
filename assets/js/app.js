@@ -1,53 +1,36 @@
-$(function(){
+const shares_container = document.getElementById('shares_container');
 
-    var header = $("#header"),
-        headerHeight = $("#header").innerHeight(),
-        scrollOffset = $(window).scrollTop();
+const fetchShares = async () => {
+    const url = 'http://localhost:7070/shares';
+    const res = await fetch(url);
+    const shares = await res.json();
+    shares.map(item => createSharesCard(item));
+};
 
-//    Fixed Header
-    checkScroll(scrollOffset);
+function createSharesCard(share) {
+	const shareEl = document.createElement('div');
+	shareEl.classList.add('share');
 
-    $(window).on("scroll",function(){
-      scrollOffset = $(this).scrollTop();
+	const brand = share.brand[0].toUpperCase() + share.brand.slice(1);
+	
+	const shareInnerHTML = `
+        <div class="img-container">
+            <img src="/assets/images/stock-market.png" alt="${brand}" />
+        </div>
+        <div class="info">
+            <span class="number">#${share.id.toString().padStart(3, '0')}</span>
+            <h3 class="name">${brand}</h3>
+            <div class="details">Price: ${share.price}</div>
+            <div class="details">Buying date: ${share.buyingDate}</div>
+            <div class="details">Risk level: ${share.riskLevel.toLowerCase()}</div>
+            <div class="details">Category: ${share.sharesCategory}</div>
+            <div class="details">Trading level: ${share.tradingLevel.toLowerCase()}</div>
+        </div>
+    `;
 
-      checkScroll(scrollOffset);
+	shareEl.innerHTML = shareInnerHTML;
 
-    });
-    function checkScroll(scrollOffset){
+	shares_container.appendChild(shareEl);
+}
 
-        if (scrollOffset >= headerHeight){
-            header.addClass("fixed");
-        }else{
-            header.removeClass("fixed");
-        }
-    }
-
-//    Smooth Scroll
-    $("[data-scroll]").on("click",function(event){
-        event.preventDefault();
-
-        var $this = $(this),
-            blockId = $(this).data('scroll'),
-            blockOffset = $(blockId).offset().top;
-
-        $("#nav a").removeClass("active");
-        $this.addClass("active");
-
-        $("html,body").animate({
-           scrollTop: blockOffset
-        }, 500);
-    })
-//    Menu
-      $("#nav_toggle").on("click",function(event){
-          event.preventDefault();
-          $(this).toggleClass("active");
-          $("#nav").toggleClass("active");
-      })
-//      Collapse
-      $("[data-collapse]").on("click",function(event){
-          event.preventDefault();
-          var $this = $(this),
-            blockId = $(this).data('collapse');
-          $this.toggleClass("active");      
-        });
-});
+fetchShares();
