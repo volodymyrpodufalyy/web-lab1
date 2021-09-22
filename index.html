@@ -18,8 +18,21 @@
 <header class="header" id="header">
     <div class="container">
         <div class="header__inner">
-            <h1>Stock Market</h1>
-            <h2>September shares</h2>
+            <div class="centered">
+                <input id="search_input"  autocomplete="off" type="search" placeholder="Search shares" />
+            </div>
+            <div class="header__inner-title">
+                <div>
+                    <h1>Stock Market</h1>
+                    <h2>September shares</h2>
+                </div>
+            </div>
+            <div class="centered">
+                <h3 id="total_price"></h3>
+            </div>
+            <button id="sort_btn">
+                    <h3>Sort by price</h3>
+            </button>
         </div>
     </div>
 </header>
