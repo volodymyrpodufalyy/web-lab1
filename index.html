@@ -33,6 +33,11 @@
             <button id="sort_btn">
                     <h3>Sort by price</h3>
             </button>
+            <nav class="nav">
+                <a href="/" class="nav__link" data-link>All Shares</a>
+                <a href="/create" class="nav__link" data-link>Create</a>
+                <a href="/edit" class="nav__link" data-link>Edit</a>
+            </nav>
         </div>
     </div>
 </header>
@@ -42,16 +47,16 @@
 <!--Shares-->
 <section class="section_shares">
     <div class="container">
-        <ul id="shares_container" class="shares__list">
-           
-        </ul>
+        <div id="app">
+
+        </div>
     </div>
 </section>
 
 
 </div>
 
-<script src="assets/js/app.js"></script>
+<script type="module" src="assets/js/index.js"></script>
 
 </body>
 </html>
