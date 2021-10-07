@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/global.css">
+    <link rel="stylesheet" href="/assets/css/header.css">
+    <link rel="stylesheet" href="/assets/css/section.css">
+    <link rel="stylesheet" href="/assets/css/form.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@900&display=swap" rel="stylesheet">
+    <title>September shares</title>
+</head>
+<body>
+
+
+<header class="header" id="header">
+    <div class="container">
+        <div class="header__inner">
+            <div class="centered">
+                <input id="search_input"  autocomplete="off" type="search" placeholder="Search shares" />
+            </div>
+            <div class="header__inner-title">
+                <div>
+                    <h1>Stock Market</h1>
+                    <h2>September shares</h2>
+                </div>
+            </div>
+            <div class="centered">
+                <h3 id="total_price"></h3>
+            </div>
+            <button id="sort_btn">
+                    <h3>Sort by price</h3>
+            </button>
+            <nav class="nav">
+                <a href="/" class="nav__link" data-link>All Shares</a>
+                <a href="/create" class="nav__link" data-link>Create</a>
+                <a href="/edit" class="nav__link" data-link>Edit</a>
+            </nav>
+        </div>
+    </div>
+</header>
+
+<!--Shares-->
+<section class="section_shares">
+    <div class="container">
+        <div id="app">
+
+        </div>
+    </div>
+</section>
+
+<script type="module" src="/assets/js/index.js"></script>
+
+</body>
+</html>
