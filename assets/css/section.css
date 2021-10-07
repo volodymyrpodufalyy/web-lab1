@@ -26,13 +26,6 @@ h1 {
 	max-width: 1500px;
 }
 
-.create__form {
-	display: flex;
-	justify-content: center;
-	margin: 30px auto;
-	max-width: 1500px;
-}
-
 .share {
 	background-color: rgb(247, 243, 243);
 	border-radius: 20px;

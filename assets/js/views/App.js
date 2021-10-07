@@ -18,6 +18,8 @@ async function App () {
     shares = await res.json();
     shares.map(item => createSharesCard(item));
 
+    console.log(shares, 'shares');
+
     const sum = (items, prop) => {
         return items.reduce( function(a, b){
             return a + b[prop];

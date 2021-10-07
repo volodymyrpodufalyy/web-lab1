@@ -9,7 +9,7 @@ const navigateTo = url => {
     router();
 };
 
-const router = async () => {
+const router = () => {
     const routes = [
         { path: "/", view: Dashboard },
         { path: "/create", view: Create },
@@ -33,9 +33,9 @@ const router = async () => {
         };
     }
 
-    const view = match.route.view();
+    const view = match.route.view;
 
-    await view;
+    return view();
 };
 
 window.addEventListener("popstate", router);

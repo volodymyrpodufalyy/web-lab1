@@ -53,14 +53,6 @@
     padding: 0 30px;
 }
 
-button {
-    border: none;
-    border-radius: 10px;
-    padding: 10px;
-    cursor: pointer;
-    background-color: aliceblue;
-    padding: 0 30px;
-}
 
 .centered {
     display: flex;

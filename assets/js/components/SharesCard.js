@@ -12,10 +12,7 @@ function createSharesCard(share) {
             <span class="number">#${share.id.toString().padStart(3, '0')}</span>
             <h3 class="name">${brand}</h3>
             <div class="details">Price: ${share.price}</div>
-            <div class="details">Buying date: ${share.buyingDate}</div>
             <div class="details">Risk level: ${share.riskLevel.toLowerCase()}</div>
-            <div class="details">Category: ${share.sharesCategory}</div>
-            <div class="details">Trading level: ${share.tradingLevel.toLowerCase()}</div>
         </div>
     `;
 

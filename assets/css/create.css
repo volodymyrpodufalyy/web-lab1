@@ -1,0 +1,49 @@
+
+.create__form {
+	display: flex;
+	justify-content: center;
+	margin: 30px auto;
+	max-width: 1500px;
+    width: 100%;
+}
+
+.create__title {
+    width: 100%;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.create__content {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.create__input {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+.input-inner {
+    display: flex;
+    flex-direction: column; 
+}
+
+.input-name {
+    margin-right: 30px;
+}
+
+.submit__btn {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.submit__btn button {
+    padding: 10px 40px;
+}
