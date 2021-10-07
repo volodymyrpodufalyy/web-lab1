@@ -1,68 +1,24 @@
+import createForm from "../components/Form.js";
+import createInputEl from "../components/Input.js";
+
 const Create = () => {
   const app_container = document.getElementById("app");
-  const submit_btn = document.createElement("div");
 
-  submit_btn.innerHTML = '<button type="submit"><h3>Submit</h3></button>';
-  submit_btn.className = "submit__btn";
+  const {submit_btn, form_container, form_content, inputs} = createForm();
 
-  const create_form_container = document.createElement("div");
-  create_form_container.className = "create__form";
-  const create_content = document.createElement("div");
-  create_content.className = "create__content";
-  create_form_container.appendChild(create_content);
+  let radio_btns;
+
+
+  
+  inputs.map(async (item, index) => {
+    const {inputEL, radioButtons} = await createInputEl(item, index);
+    console.log(inputEL, "inputEL");
+    form_content.appendChild(inputEL);
+    radio_btns = radioButtons;
+  });
+
 
   let tradingLevel;
-
-  const radioButtons = ["Low", "Medium", "High", "Extrahigh"];
-
-  const createInputEl = (el, index) => {
-    const inputEL = document.createElement("div");
-    inputEL.className = `create__input`;
-
-    const inputName = document.createElement("h3");
-    inputName.className = "input-name";
-    inputName.innerText = el.name;
-    inputEL.appendChild(inputName);
-
-    if (index !== 2) {
-      const inputField = document.createElement("input");
-      inputField.id = el.name.toLowerCase();
-      inputEL.appendChild(inputField);
-    } else {
-      const inputContent = document.createElement("div");
-      inputContent.className = "input-inner";
-      inputEL.appendChild(inputContent);
-      let radio_btn;
-      radioButtons.map((item) => {
-        const radio_label = document.createElement("label");
-        radio_btn = document.createElement("input");
-        radio_btn.type = "radio";
-        radio_btn.value = item.toUpperCase();
-        radio_btn.name = "riskLevel";
-        radio_btn.id = item.toLowerCase();
-        radio_label.innerText = item;
-        radio_label.htmlFor = item.toLowerCase();
-        inputContent.appendChild(radio_label);
-        inputContent.appendChild(radio_btn);
-      });
-    }
-
-    create_content.appendChild(inputEL);
-  };
-
-  const inputs = [
-    {
-      name: "Brand",
-    },
-    {
-      name: "Price",
-    },
-    {
-      name: "Risk level",
-    },
-  ];
-
-  inputs.map((item, index) => createInputEl(item, index));
 
   const handleCreateButton = () => {
     let brand = "";
@@ -71,13 +27,13 @@ const Create = () => {
       if (index !== 2) {
         const input = document.getElementById(item.name.toLowerCase());
         if (input.value) {
-          input.id === 'brand' && (brand = input.value);
-          input.id === 'price' && (price = +input.value);
+          input.id === "brand" && (brand = input.value);
+          input.id === "price" && (price = +input.value);
         }
       }
     });
 
-    radioButtons.map((item) => {
+    radio_btns.map((item) => {
       const input = document.getElementById(item.toLowerCase());
       console.log(input.checked, "checked");
       if (input.checked) {
@@ -86,7 +42,6 @@ const Create = () => {
         console.log("error, tradingLevel is undefined");
       }
     });
-  
 
     if (tradingLevel && price && brand) {
       return fetch("http://localhost:7070/shares", {
@@ -123,8 +78,8 @@ const Create = () => {
 
   submit_btn.addEventListener("click", handleCreateButton);
 
-  app_container.innerHTML = `<h2 class="create__title">Create Share</h2>`;
-  app_container.appendChild(create_form_container);
+  app_container.innerHTML = `<h2 class="form__title">Create Share</h2>`;
+  app_container.appendChild(form_container);
   app_container.appendChild(submit_btn);
 };
 

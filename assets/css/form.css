@@ -1,5 +1,5 @@
 
-.create__form {
+.form__container {
 	display: flex;
 	justify-content: center;
 	margin: 30px auto;
@@ -7,13 +7,13 @@
     width: 100%;
 }
 
-.create__title {
+.form__title {
     width: 100%;
     text-align: center;
     margin-top: 50px;
 }
 
-.create__content {
+.form__content {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
@@ -22,7 +22,7 @@
     width: 100%;
 }
 
-.create__input {
+.form__input {
     width: 100%;
     display: flex;
     justify-content: center;
