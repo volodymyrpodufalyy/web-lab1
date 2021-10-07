@@ -24,8 +24,10 @@ const createInputEl = async (el, index, editing, shareNum) => {
   if (index !== 2) {
     const inputField = document.createElement("input");
     inputField.id = el.name.toLowerCase();
-    index === 0 && (inputField.value = share?.brand);
-    index === 1 && (inputField.value = share?.price);
+    if (editing) {
+      index === 0 && (inputField.value = share?.brand);
+      index === 1 && (inputField.value = share?.price);
+    }
     inputEL.appendChild(inputField);
   } else {
     const inputContent = document.createElement("div");
@@ -41,6 +43,9 @@ const createInputEl = async (el, index, editing, shareNum) => {
       radio_btn.id = item.toLowerCase();
       radio_label.innerText = item;
       radio_label.htmlFor = item.toLowerCase();
+      if (editing) {
+        radio_btn.checked = item.toUpperCase() === share?.riskLevel;
+      }
       inputContent.appendChild(radio_label);
       inputContent.appendChild(radio_btn);
     });

@@ -66,6 +66,7 @@ const Create = () => {
           return Promise.reject(response);
         })
         .then(function (data) {
+          app_container.innerHTML = `<h2 class="form__title">Go to main page to see you added share</h2>`;
           console.log(data);
         })
         .catch(function (error) {
