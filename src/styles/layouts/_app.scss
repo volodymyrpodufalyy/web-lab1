@@ -1,0 +1,33 @@
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header__inner-title {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 0 30px;
+}
+
+.header__inner-title div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 30px;
+}
+
+input {
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  height: 30px;
+  width: 105px;
+  outline: none;
+}
+
+input:focus {
+  border: 1px solid rgb(85, 82, 82);
+}
