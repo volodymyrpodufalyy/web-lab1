@@ -16,7 +16,7 @@ const App = () => {
             <div class="header__inner-title">
               <div>
                 <h1>Stock Market</h1>
-                <h2>September shares</h2>
+                <h2>Octobert shares</h2>
               </div>
             </div>
       </header>
