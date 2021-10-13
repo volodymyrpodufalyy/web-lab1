@@ -1,0 +1,52 @@
+.footer {
+  border-top: 3px solid rgba(36, 35, 35, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.footer__inner {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 80%;
+}
+
+.branding {
+  display: flex;
+  flex-direction: column;
+  h2 {
+    padding-top: 20px;
+    max-width: 120px;
+  }
+  p {
+    max-width: 120px;
+    padding: 20px 0;
+  }
+}
+
+.social-icons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  &__icon {
+    margin: 0 10px;
+    padding: 10px;
+    border-radius: 50%;
+  }
+  .facebook {
+    background-color: rgb(74, 74, 207);
+  }
+  .twitter {
+    background-color: rgb(65, 151, 231);
+  }
+  .linkedin {
+    background-color: rgb(74, 136, 207);
+  }
+  .google {
+    background-color: rgb(216, 43, 43);
+  }
+}

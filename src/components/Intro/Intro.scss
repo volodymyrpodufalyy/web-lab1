@@ -1,0 +1,33 @@
+.intro {
+  display: flex;
+  flex-direction: row;
+  width: 75%;
+  justify-content: space-between;
+}
+
+.intro-wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 50px 0;
+  width: 100%;
+  align-items: center;
+}
+
+.inner-title {
+  display: flex;
+  flex-direction: column;
+}
+
+.intro__img {
+  width: 250px;
+  height: 250px;
+  border-radius: 7px;
+}
+
+.intro__text {
+  padding-left: 30px;
+  p {
+    font-size: 16px;
+    padding-top: 30px;
+  }
+}
