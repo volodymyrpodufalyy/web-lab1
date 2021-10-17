@@ -7,7 +7,7 @@
 }
 
 .header__inner {
-  width: 55%;
+  width: 64%;
   justify-content: space-between;
   align-items: center;
   display: flex;
@@ -15,8 +15,14 @@
 }
 
 .tab-name {
-  max-width: 120px;
+  max-width: 140px;
   background-color: rgb(164, 173, 173);
   border-radius: 10px;
   padding: 5px 10px;
+  margin-right: 15px;
+}
+
+.tab-links {
+  display: flex;
+  justify-content: space-evenly;
 }
