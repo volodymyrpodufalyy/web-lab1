@@ -16,9 +16,7 @@ const Catalog = () => {
   }, []);
 
   return (
-    <div>
       <SharesList shares={shares} />
-    </div>
   )
 }
 
