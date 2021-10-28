@@ -1,7 +1,7 @@
 import { axios } from "../../core";
 
-const pokemonApi = {
+const sharesApi = {
     getAll: () => axios.get(`http://localhost:7070/shares`),
 };
   
-export default pokemonApi;
+export default sharesApi;

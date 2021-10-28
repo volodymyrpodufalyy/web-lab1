@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
 import { Spin, ShareCard } from "../index";
 import "./SharesList.scss";
 
-const SharesList = ({showMore, shares}) => {
+const SharesList = ({shares}) => {
 
 
   if (!shares.length) {
