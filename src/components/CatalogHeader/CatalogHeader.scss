@@ -1,0 +1,22 @@
+.catalog-header {
+  border-bottom: 1px solid rgba(36, 35, 35, 0.6);
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  padding: 30px 0 30px 30px;
+  align-items: center;
+}
+
+.catalog-header__filters {
+  width: 65%;
+  display: flex;
+  flex-direction: row;
+}
+
+.catalog-header__button {
+  background-color: #fff;
+  border: 1px solid #000;
+  padding: 10px 15px;
+  width: 150px;
+  margin-left: 10px;
+}

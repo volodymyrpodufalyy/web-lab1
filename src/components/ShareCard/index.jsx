@@ -17,6 +17,7 @@ const ShareCard = ({ card }) => {
         <div className="details">Price: {card.price}</div>
         <div className="details">Risk level: {card.riskLevel.toLowerCase()}</div>
       </div>
+      <button className="buy-btn">Buy</button>
     </Link>
   );
 };

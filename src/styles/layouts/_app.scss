@@ -15,3 +15,10 @@ input:focus {
   height: 50px;
   margin-left: 60px;
 }
+
+.row-container {
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}

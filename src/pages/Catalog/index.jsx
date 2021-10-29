@@ -1,12 +1,9 @@
-import React, {useState, useEffect} from 'react'
+import React, { useState, useEffect } from "react";
 
-
-import { SharesList } from "../../components";
+import { CatalogHeader, SharesList } from "../../components";
 import { sharesApi } from "../../utils/api";
 
 const Catalog = () => {
-
-  
   const [shares, setShares] = useState([]);
 
   useEffect(() => {
@@ -16,8 +13,11 @@ const Catalog = () => {
   }, []);
 
   return (
+    <React.Fragment>
+      <CatalogHeader  setShares={setShares} shares={shares} />
       <SharesList shares={shares} />
-  )
-}
+    </React.Fragment>
+  );
+};
 
 export default Catalog;
