@@ -1,24 +1,30 @@
 import React from "react";
 
-import { Spin, ShareCard } from "../index";
+import { ShareCard } from "../index";
 import "./SharesList.scss";
 
-const SharesList = ({shares}) => {
+const SharesList = ({ shares }) => {
+  // if (!shares.length) {
+  //   return (
 
-
-  if (!shares.length) {
-    return <Spin />;
-  }
+  //   );
+  // }
 
   return (
     <section className="section_shares">
-      <ul className="shares__list">
-        {shares.map((shareInfo) => (
-          <li className="share" key={shareInfo.id}>
-            <ShareCard card={shareInfo} />
-          </li>
-        ))}
-      </ul>
+      {shares.length ? (
+        <ul className="shares__list">
+          {shares.map((shareInfo) => (
+            <li className="share" key={shareInfo.id}>
+              <ShareCard card={shareInfo} />
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <div className="no-shares">
+          <h2>No shares found</h2>
+        </div>
+      )}
     </section>
   );
 };

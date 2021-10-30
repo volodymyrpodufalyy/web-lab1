@@ -14,7 +14,7 @@ const Catalog = () => {
 
   return (
     <React.Fragment>
-      <CatalogHeader  setShares={setShares} shares={shares} />
+      <CatalogHeader setShares={setShares} shares={shares} />
       <SharesList shares={shares} />
     </React.Fragment>
   );

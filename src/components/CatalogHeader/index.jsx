@@ -27,7 +27,6 @@ const CatalogHeader = (props) => {
     objValues[2] && (filter.sharesCategory = objValues[2]);
     const filtered = data.filter(function(item) {
       for (let key in filter) {
-        console.log(key, 'key in filter');
         if (item[key] === undefined || item[key] !== filter[key])
           return false;
       }

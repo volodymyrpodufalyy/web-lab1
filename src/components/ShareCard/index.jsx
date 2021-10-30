@@ -16,6 +16,8 @@ const ShareCard = ({ card }) => {
         <h3 className="name">{brand}</h3>
         <div className="details">Price: {card.price}</div>
         <div className="details">Risk level: {card.riskLevel.toLowerCase()}</div>
+        <div className="details">Trading level: {card.tradingLevel.toLowerCase()}</div>
+        <div className="details">Category: {card.sharesCategory.toLowerCase()}</div>
       </div>
       <button className="buy-btn">Buy</button>
     </Link>

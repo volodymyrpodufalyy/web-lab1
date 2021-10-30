@@ -5,11 +5,8 @@ import "./SelectItem.scss";
 
 const SelectItem = (props) => {
   const { item, updateSelectedData, selectedData } = props;
-  const [selectedValue, setSelectedValue] = useState({});
 
   const onChange = (e) => {
-    setSelectedValue(e);
-    selectedValue && (selectedData[item.name] = selectedValue.value);
     selectedData[item.name] = e.value;
     updateSelectedData(JSON.parse(JSON.stringify(selectedData)));
   };

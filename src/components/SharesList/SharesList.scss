@@ -1,5 +1,6 @@
 .section_shares {
   padding: 0 15%;
+  min-height: 400px;
 }
 
 .shares__list {
@@ -10,4 +11,12 @@
   margin: 30px auto;
   max-width: 1500px;
   list-style-type: none;
+}
+
+.no-shares {
+  display: flex;
+  width: 100%;
+  padding-top: 20%;
+  justify-content: center;
+  align-items: center;
 }
