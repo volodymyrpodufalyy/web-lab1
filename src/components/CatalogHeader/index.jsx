@@ -13,22 +13,21 @@ const CatalogHeader = (props) => {
     tradingLevel: "",
     sharesCategory: "",
   });
+  const [clear, setToggleClear] = useState(false);
 
   const updateSelectedData = (value) => {
     setSelectedData(value);
   };
-
   const handleApplyButtonClick = async () => {
-    const {data} = await sharesApi.getAll();
-    const objValues = Object.entries(selectedData).map(arr => arr[1]);
-    const filter = { };
+    const { data } = await sharesApi.getAll();
+    const objValues = Object.entries(selectedData).map((arr) => arr[1]);
+    const filter = {};
     objValues[0] && (filter.riskLevel = objValues[0]);
     objValues[1] && (filter.tradingLevel = objValues[1]);
     objValues[2] && (filter.sharesCategory = objValues[2]);
-    const filtered = data.filter(function(item) {
+    const filtered = data.filter(function (item) {
       for (let key in filter) {
-        if (item[key] === undefined || item[key] !== filter[key])
-          return false;
+        if (item[key] === undefined || item[key] !== filter[key]) return false;
       }
       return true;
     });
@@ -38,12 +37,21 @@ const CatalogHeader = (props) => {
   const handleSearchInput = (e) => {
     const query = e.target.value.toLowerCase();
     const searched = shares.filter((item) => {
-        return (
-          item.brand.toLowerCase().includes(query)
-        );
-      });
+      return item.brand.toLowerCase().includes(query);
+    });
     setShares(searched);
-  }
+  };
+
+  const handleClearButtonClick = async () => {
+    const { data } = await sharesApi.getAll();
+    setSelectedData({
+      riskLevel: "",
+      tradingLevel: "",
+      sharesCategory: "",
+    });
+    setToggleClear(!clear);
+    setShares(data);
+  };
 
   return (
     <div className="catalog-header">
@@ -52,6 +60,7 @@ const CatalogHeader = (props) => {
         {allOptions.map((item) => (
           <div key={item.name}>
             <SelectItem
+              clear={clear}
               selectedData={selectedData}
               updateSelectedData={updateSelectedData}
               item={item}
@@ -64,7 +73,13 @@ const CatalogHeader = (props) => {
         onClick={handleApplyButtonClick}
         className="catalog-header__button"
       >
-        Apply/Clear filter
+        Apply
+      </button>
+      <button
+        onClick={handleClearButtonClick}
+        className="catalog-header__button"
+      >
+        Clear filter
       </button>
     </div>
   );

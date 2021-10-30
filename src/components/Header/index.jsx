@@ -10,10 +10,10 @@ const Header = () => {
       <div className="header__inner">
         <img className="logo" alt="logo" src={logo} />
         <div className="tab-links">
-          <Link to={"/"} style={{ textDecoration: "none" }}>
+          <Link to={"/"} style={{ color: "#000" }}>
             <h2 className="tab-name">Home page</h2>
           </Link>
-          <Link to={"/catalog"} style={{ textDecoration: "none" }}>
+          <Link to={"/catalog"} style={{ color: "#000" }}>
             <h2 className="tab-name">Catalog page</h2>
           </Link>
         </div>

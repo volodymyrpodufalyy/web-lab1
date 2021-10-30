@@ -4,12 +4,6 @@ import { ShareCard } from "../index";
 import "./SharesList.scss";
 
 const SharesList = ({ shares }) => {
-  // if (!shares.length) {
-  //   return (
-
-  //   );
-  // }
-
   return (
     <section className="section_shares">
       {shares.length ? (
