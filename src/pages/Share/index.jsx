@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { Spin } from "../../components";
+import { useHistory } from "react-router-dom";
 
+import { Spin } from "../../components";
 import { sharesApi } from "../../utils/api";
 import sharesImg from "../../assets/stock-market.png";
 import "./Share.scss";
@@ -10,13 +11,13 @@ const Share = () => {
   const { id } = useParams();
   const [shareData, setShareData] = useState({});
 
+  const history = useHistory();
+
   useEffect(() => {
     sharesApi.getOne(id).then(({ data }) => {
       setShareData(data);
     });
   }, []);
-
-  console.log(shareData, "setShareData");
 
   if (!shareData.brand) {
     return <Spin />;
@@ -52,7 +53,7 @@ const Share = () => {
         <div className="row-container bottom-info">
           <h2>Price: {shareData.price}$</h2>
           <div className="row-container">
-            <button className="bottom-info__btn_white">Go back</button>
+            <button onClick={() => history.goBack()} className="bottom-info__btn_white">Go back</button>
             <button className="bottom-info__btn">Add to cart</button>
           </div>
         </div>

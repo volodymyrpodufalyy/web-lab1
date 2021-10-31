@@ -11,7 +11,7 @@ const Intro = () => {
         <div className="intro__text">
           <div className="inner-title">
             <h1>Stock Market</h1>
-            <h2>Octobert shares</h2>
+            <h2>October shares</h2>
           </div>
           <p>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam
