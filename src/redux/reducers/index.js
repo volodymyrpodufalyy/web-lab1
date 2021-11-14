@@ -1,8 +1,6 @@
 import { combineReducers } from "redux";
-import { uploadBookReducer } from "./uploadBook.reducer";
+import { cartReducer } from "./cart.reducer";
 
 export const rootReducer = combineReducers({
-  uploadBook: uploadBookReducer,
+  cart: cartReducer,
 });
-
-export type RootState = ReturnType<typeof rootReducer>;

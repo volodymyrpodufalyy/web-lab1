@@ -16,6 +16,9 @@ const Header = () => {
           <Link to={"/catalog"} style={{ color: "#000" }}>
             <h2 className="tab-name">Catalog page</h2>
           </Link>
+          <Link to={"/cart"} style={{ color: "#000" }}>
+            <h2 className="tab-name">Cart page</h2>
+          </Link>
         </div>
       </div>
     </header>

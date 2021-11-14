@@ -24,7 +24,7 @@ const Home = () => {
   };
 
   return (
-    <>
+    <React.Fragment>
       <Intro />
       <SharesList shares={shares} />
       <div className="more-wrapper">
@@ -32,7 +32,7 @@ const Home = () => {
           Show more
         </button>}
       </div>
-    </>
+    </React.Fragment>
   );
 };
 

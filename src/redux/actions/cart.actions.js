@@ -1,17 +1,9 @@
-import { ADD_DESCRIPTION, ADD_FILES } from "../types/uploadBook.types";
-import { Api } from "../../api";
+import { ADD_ITEM, REMOVE_ITEM } from "../actionTypes/cart.types";
 
-const setBookDescriptionActionCreator = (description) => {
-  return { type: ADD_DESCRIPTION, payload: description };
+export const addItemActionCreator = (item) => {
+  return { type: ADD_ITEM, payload: item };
 };
 
-export function setBookDescription(description) {
-  return async (dispatch) => {
-    try {
-      await Api().createBook(description);
-    } catch (e) {
-      console.log(e);
-    }
-    return dispatch(setBookDescriptionActionCreator(description));
-  };
-}
+export const removeItemActionCreator = (item) => {
+  return { type: REMOVE_ITEM, payload: item };
+};

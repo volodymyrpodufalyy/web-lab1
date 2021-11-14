@@ -6,22 +6,31 @@ import { Spin } from "../../components";
 import { sharesApi } from "../../utils/api";
 import sharesImg from "../../assets/stock-market.png";
 import "./Share.scss";
+import { useDispatch } from "react-redux";
+import { addItemActionCreator } from "../../redux/actions/cart.actions";
 
 const Share = () => {
   const { id } = useParams();
   const [shareData, setShareData] = useState({});
 
   const history = useHistory();
+  const dispatch = useDispatch();
 
   useEffect(() => {
     sharesApi.getOne(id).then(({ data }) => {
       setShareData(data);
     });
-  }, []);
+  }, [id]);
+
+  const handleAddToCart = () => {
+    dispatch(addItemActionCreator(shareData));
+    history.push('/cart')
+  }
 
   if (!shareData.brand) {
     return <Spin />;
   }
+
 
   return (
     <div className="share-page">
@@ -54,7 +63,7 @@ const Share = () => {
           <h2>Price: {shareData.price}$</h2>
           <div className="row-container">
             <button onClick={() => history.goBack()} className="bottom-info__btn_white">Go back</button>
-            <button className="bottom-info__btn">Add to cart</button>
+            <button onClick={handleAddToCart} className="bottom-info__btn">Add to cart</button>
           </div>
         </div>
       </div>

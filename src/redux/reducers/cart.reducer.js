@@ -1,7 +1,7 @@
 import { ADD_ITEM, REMOVE_ITEM } from "../actionTypes/cart.types";
 
 const initialState = {
-  items: [],
+  cartItems: [],
 };
 
 export function cartReducer(
@@ -12,13 +12,13 @@ export function cartReducer(
     case ADD_ITEM: {
       return {
         ...state,
-        items: [...state.items, action.payload],
+        cartItems: [...state.cartItems, action.payload],
       };
     }
     case REMOVE_ITEM: {
       return {
         ...state,
-        items: state.items.filter(i => i !== action.payload),
+        cartItems: state.cartItems.filter(i => i !== action.payload),
       };
     }
     default:
