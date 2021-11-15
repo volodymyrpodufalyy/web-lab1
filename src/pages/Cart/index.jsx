@@ -1,12 +1,13 @@
-import React from 'react'
-import { useSelector } from 'react-redux';
+import React from "react";
+import { useSelector } from "react-redux";
 
 import cartItemImg from "../../assets/stock-market.png";
 import "./Cart.scss";
 
 const Cart = () => {
-  const {cartItems} = useSelector((state) => state.cart);
-  console.log(cartItems, 'cartItems');
+  const { cartItems, quantityById } = useSelector((state) => state.cart);
+
+  const getQuantity = (shareId) => quantityById[shareId] || 0;
 
   return (
     <div className="cart-page">
@@ -15,17 +16,24 @@ const Cart = () => {
         <h2>There aren't any items in the cart yet</h2>
       ) : (
         <React.Fragment>
-          {cartItems.map(i => (
+          {cartItems.map((i) => (
             <div className="cart-item" key={i.brand}>
-                <img alt="cart item" src={cartItemImg} />
-                <h3>{i.brand}</h3>
-                <h3>{i.price}</h3>
+              <img alt="cart item" src={cartItemImg} />
+              <h3>
+                {i.brand} #{i.id.toString().padStart(3, "0")}
+              </h3>
+              <h3 className="cart-item__quantity">
+                <button>-</button>
+                {getQuantity(i.id)}
+                <button>+</button>
+              </h3>
+              <h3>{i.price}</h3>
             </div>
           ))}
         </React.Fragment>
       )}
     </div>
-  )
-}
+  );
+};
 
-export default Cart
+export default Cart;

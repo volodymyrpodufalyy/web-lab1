@@ -5,6 +5,11 @@
     margin-top: 30px;
     text-align: center;
   }
+  h2 {
+    margin-top: 10%;
+    font-size: 26px;
+    text-align: center;
+  }
 }
 
 .cart-item {
@@ -23,5 +28,13 @@
   }
   h3 {
     font-size: 26px;
+  }
+  &__quantity {
+    button {
+      font-size: 24px;
+      font-weight: bold;
+      padding: 10px 15px;
+      margin: 15px;
+    }
   }
 }
