@@ -1,37 +1,62 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { useHistory } from "react-router-dom";
 
 import cartItemImg from "../../assets/stock-market.png";
+import {
+  addItemActionCreator,
+  removeItemActionCreator,
+} from "../../redux/actions/cart.actions";
 import "./Cart.scss";
 
 const Cart = () => {
-  const { cartItems, quantityById } = useSelector((state) => state.cart);
+  const { cartItems, quantityById, totalPrice } = useSelector(
+    (state) => state.cart
+  );
+  const dispatch = useDispatch();
+  const history = useHistory();
 
   const getQuantity = (shareId) => quantityById[shareId] || 0;
+
+  const onRemoveClick = (item) => {
+    dispatch(removeItemActionCreator(item));
+  };
+
+  const onAddCartItem = (item) => {
+    dispatch(addItemActionCreator(item));
+  };
 
   return (
     <div className="cart-page">
       <h1>Cart page</h1>
       {!cartItems.length ? (
-        <h2>There aren't any items in the cart yet</h2>
+        <div className="no-items">
+          <h2>There aren't any items in the cart yet</h2>
+        </div>
       ) : (
-        <React.Fragment>
-          {cartItems.map((i) => (
-            <div className="cart-item" key={i.brand}>
+        <div className="cart-page__items">
+          {cartItems.map((cartItem) => (
+            <div className="cart-item" key={cartItem.brand}>
               <img alt="cart item" src={cartItemImg} />
               <h3>
-                {i.brand} #{i.id.toString().padStart(3, "0")}
+                {cartItem.brand} #{cartItem.id.toString().padStart(3, "0")}
               </h3>
               <h3 className="cart-item__quantity">
-                <button>-</button>
-                {getQuantity(i.id)}
-                <button>+</button>
+                <button onClick={() => onRemoveClick(cartItem)}>-</button>
+                {getQuantity(cartItem.id)}
+                <button onClick={() => onAddCartItem(cartItem)}>+</button>
               </h3>
-              <h3>{i.price}</h3>
+              <h3>{cartItem.price}</h3>
             </div>
           ))}
-        </React.Fragment>
+          <h2>Total: {totalPrice} $</h2>
+        </div>
       )}
+      <div className="action-btns">
+        <button className="back-btn" onClick={() => history.push("/catalog")}>
+          Back to catalog
+        </button>
+      </div>
     </div>
   );
 };
