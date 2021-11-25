@@ -1,0 +1,51 @@
+.share {
+  background-color: rgb(247, 243, 243);
+  border-radius: 20px;
+  box-shadow: 0 3px 15px rgba(100, 100, 100, 0.5);
+  margin: 10px;
+  padding: 20px;
+  text-align: center;
+}
+
+.share .img-container {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.share .content {
+  cursor: pointer;
+}
+
+.share .img-container img {
+  margin-top: 20px;
+  width: 150px;
+  height: 150px;
+}
+
+.share .info {
+  margin-top: 20px;
+}
+
+.share .number {
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  font-size: 1em;
+  padding: 5px 10px;
+}
+
+.share .name {
+  margin: 15px 0 7px;
+  letter-spacing: 1px;
+}
+
+.share .details {
+  font-size: 14px;
+}
+
+.buy-btn {
+  padding: 10px 40px;
+  background-color: #fff;
+  border: 1px solid #000;
+  margin: 10px auto;
+}

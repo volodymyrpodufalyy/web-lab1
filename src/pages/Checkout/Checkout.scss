@@ -1,0 +1,35 @@
+.checkout-page {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  h1 {
+    margin: 20px auto;
+  }
+}
+
+.checkout-form {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  &__content {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    flex: 1;
+    padding-bottom: 5%;
+    & > div {
+      margin-bottom: 15px;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  input {
+    width: 25vw;
+  }
+  button {
+    width: 25vw;
+    height: 50px;
+    padding: 10px 15px;
+    margin: 10px;
+  }
+}
