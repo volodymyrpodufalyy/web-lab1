@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 
 import cartItemImg from "../../assets/stock-market.png";
+import ActionButtons from "../../components/ActionButtons";
 import {
   addItemActionCreator,
   removeItemActionCreator,
@@ -21,10 +22,12 @@ const Cart = () => {
   const onRemoveClick = (item) => {
     dispatch(removeItemActionCreator(item));
   };
-
   const onAddCartItem = (item) => {
     dispatch(addItemActionCreator(item));
   };
+
+  const handleBackBtn = () => history.push("/catalog");
+  const handleNextBtn = () => history.push("/checkout");
 
   return (
     <div className="cart-page">
@@ -52,11 +55,10 @@ const Cart = () => {
           <h2>Total: {totalPrice} $</h2>
         </div>
       )}
-      <div className="action-btns">
-        <button className="back-btn" onClick={() => history.push("/catalog")}>
-          Back to catalog
-        </button>
-      </div>
+      <ActionButtons
+        handleBackBtn={handleBackBtn}
+        handleNextBtn={handleNextBtn}
+      />
     </div>
   );
 };

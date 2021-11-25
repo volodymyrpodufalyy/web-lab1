@@ -11,12 +11,6 @@
     font-size: 26px;
     text-align: center;
   }
-  .action-btns {
-    display: flex;
-    flex: 1;
-    justify-content: flex-start;
-    align-items: flex-end;
-  }
   .no-items {
     display: flex;
     flex: 5;
@@ -31,13 +25,6 @@
       margin-top: 30px;
     }
   }
-}
-
-.back-btn {
-  width: 150px;
-  height: 50px;
-  padding: 10px 15px;
-  margin: 10px;
 }
 
 .cart-item {
